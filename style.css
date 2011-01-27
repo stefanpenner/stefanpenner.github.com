@@ -1,0 +1,162 @@
+<style>
+html, body, div, span, a, img,
+h1, h2, h3, h4, h5, h6, hgroup, p,
+dl, dialog, dt, dd, ol, ul, li,
+abbr, acronym, address, b, big, blockquote,
+cite, code, del, dfn, em, i, ins, kbd, pre, q,
+samp, tt, var, small, strong, sub, sup,
+object, iframe, form, fieldset, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, footer, header, nav, section,
+figure, menu, time, mark, audio, video {
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  font-style: inherit;
+  vertical-align: baseline;
+  white-space: normal;
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  background: transparent; }
+
+textarea, input, select {
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: normal;
+  font-style: normal;
+  white-space: normal;
+  text-align: left;
+  margin: 0;
+  padding: 0; }
+  
+  body{
+    font-size:16px;
+    line-height: 24px;
+	  line-height:1.5;   /* 30px */
+	  font-family: corbel, 'lucida grande', helvetica, sans-serif;
+	  color:#212122;
+    background-color:#fff;
+    width: 700px;
+    margin: 0 auto;
+  }
+h1, h2, h3 {
+	font-family:georgia, 'bitstream vera sans serif', 'lucida grande',
+		helvetica, verdana, sans-serif;
+	font-weight:normal;
+	letter-spacing:-0.075em;
+	color:#000;
+}
+i, em {
+	font-style:italic;
+}
+b, strong {
+	font-weight:bold;
+	color:#222;
+}
+blockquote {
+	color:#555;
+}
+blockquote em {
+	color:#333;
+	font-style:italic;
+}
+blockquote strong {
+	color:#333;
+	font-weight: normal;
+}
+dt {
+	font-weight:bold;
+	color:#000;
+}
+tt, pre, code, samp, kbd {
+	font-family: consolas, 'lucida console', 'bitstream vera sans mono',
+		'courier new', monospace;
+	color: #000;
+}
+pre {
+	color:#333;
+	background-color:#f9f9f9;
+}
+code {
+	color:#007A00;
+}
+pre code {
+	color:#333;
+}
+a, a:link {
+	color:#000;
+}
+a:visited {
+	color:#111;
+	background:#fff;
+}
+a:hover {
+	background:#000;
+	color:#fff;
+	text-decoration:none;
+}
+
+/* FORMS */
+fieldset {
+	border:0;
+	padding:0;
+}
+
+/* TYPOGRAPHY */
+
+p, ul, ol, dl, pre, blockquote, table, form {
+	margin:30px 0;
+}
+dl {
+	margin-left:2em;
+}
+hr {
+	color:#eee;
+	background-color:#ccc;
+	border:0;
+	height:1px;
+	margin:45px 0;
+}
+blockquote {
+	font-size:16px;
+	line-height:1.88;
+	margin:30px 75px 30px 50px;
+	padding:0;
+}
+tt, pre, code, samp, kbd {
+	font-size: 16px;
+	line-height:1.2;
+}
+pre {
+	margin:20px 0;
+	padding:6px 4px 4px 6px;
+	border:1px solid #eee;
+	border-left-width:20px;
+	overflow:auto;
+}
+h1 {
+	font-size:42px;
+	line-height:1.43;      /* 50px */
+	margin:30px 0;
+}
+h2 {
+	font-size:26px;
+	line-height:1.1;         /* 36px */
+	margin:25px 0;
+}
+h3 {
+	font-size:26px;
+	line-height:1.1;
+	margin:25px 0;
+}
+h4 {
+	font-size:20px;
+	font-weight:bold;
+	line-height:1.5;
+	margin:1em 0;
+}
+  
+</style>
