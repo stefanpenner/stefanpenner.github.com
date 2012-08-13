@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='chrome=1' http-equiv='X-UA-Compatible' />
+    <meta content='text/html;charset=utf-8' http-equiv='Content-Type' />
+    <meta content='4MWsSoj8XgeWCUPYXp2VwjFloSmkbO7wqfu9woyD++E=' name='verify-v1' />
+    <title>iamstef: Goodbye Awk, Hello Ruby!</title>
+    <script type='text/javascript'>
+      //<![CDATA[
+        (function(){
+          var e = [ 'header','footer','nav','article','section','aside'];
+          for(var i = 0; i < e.length; i++){ document.createElement(e[i]); }
+        })();
+      //]]>
+    </script>
+    <link href='/rss.xml' rel='alternate' title='iamSTEF.net RSS Feed' type='application/rss+xml' />
+    <link href='/css/site.css' media='screen' rel='stylesheet' title='no title' type='text/css' />
+    <link rel="stylesheet" type="text/css" href="/css/sh_nedit.min.css">
+    <script type="text/javascript" src="/js/sh_main.min.js"></script>
+  </head>
+  <body onload='sh_highlightDocument("/lang/",".min.js")'>
+    <header id='main'>
+      <h1 id='logo'>
+        <a href='/'>Stefan Penner</a>
+      </h1>
+    </header>
+    <article>
+      <header>
+        <time datetime='2007-08-21T18:02:40'>August 21, 2007</time>
+        <h2>
+          <a href='/drafts/goodbye_awk_hello_ruby.html.html'>Goodbye Awk, Hello Ruby!</a>
+        </h2>
+      </header>
+      <blockquote>
+      <p>AWK is a language for processing files of text. A file is treated as a sequence of records, and by default each line is a record. Each line is broken up into a sequence of fields, so we can think of the first word in a line as the first field, the second word as the second field, and so on. An AWK program is of a sequence of pattern-action statements. AWK reads the input a line at a time. A line is scanned for each pattern in the program, and for each pattern that matches, the associated action is executed. &#8211; Alfred V. Aho</p>
+      </blockquote>
+      <h2>awk Example</h2>
+      <pre class='sh_sh'>
+      ps | ruby -ane 'BEGIN { puts :hi}; puts $F.inspect ; END{ puts :bye}'
+      </pre>
+      
+      <pre class='sh_ruby'>
+      gets =~ /([\w-]+) \(([^)]+)\)/
+      name = $1
+      puts $2.split(",").map do |v| 
+        "gem install #{name} --version #{v} --no-ri --no-rdoc"
+      end
+      </pre>
+      <pre class='sh_sh'>
+      gem list | ruby -ne '$_ =~ /([\w-]+) \(([^)]+)\)/; name = $1; $2.split(",").each{|v| puts " gem install #{name} --version #{v} --no-ri --no-rdoc" }'
+      </pre>
+      <script> var idcomments_acct = '3c052641aefb55cae387a0e63b9a32c2', idcomments_post_id, idcomments_post_url; </script>
+      <span id="IDCommentsPostTitle" style="display:none"></span>
+      <script type='text/javascript' src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+      <script type='text/javascript' src='http://google-analytics.com/ga.js'></script>
+      <script type='text/javascript'> try { var pageTracker = _gat._getTracker("UA-4246413-2"); pageTracker._trackPageview();} catch(err) {}</script>
+    </article>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='chrome=1' http-equiv='X-UA-Compatible' />
+    <meta content='text/html;charset=utf-8' http-equiv='Content-Type' />
+    <meta content='4MWsSoj8XgeWCUPYXp2VwjFloSmkbO7wqfu9woyD++E=' name='verify-v1' />
+    <meta content='Why I choose to build a webby blog' name='description' />
+    <title>iamstef: Hacking The blog</title>
+    <script type='text/javascript'>
+      //<![CDATA[
+        (function(){
+          var e = [ 'header','footer','nav','article','section','aside'];
+          for(var i = 0; i < e.length; i++){ document.createElement(e[i]); }
+        })();
+      //]]>
+    </script>
+    <link href='/rss.xml' rel='alternate' title='iamSTEF.net RSS Feed' type='application/rss+xml' />
+    <link href='/css/site.css' media='screen' rel='stylesheet' title='no title' type='text/css' />
+    <link rel="stylesheet" type="text/css" href="/css/sh_nedit.min.css">
+    <script type="text/javascript" src="/js/sh_main.min.js"></script>
+  </head>
+  <body onload='sh_highlightDocument("/lang/",".min.js")'>
+    <header id='main'>
+      <h1 id='logo'>
+        <a href='/'>Stefan Penner</a>
+      </h1>
+    </header>
+    <article>
+      <header>
+        <time datetime='2011-11-27T14:12:34'>November 27, 2011</time>
+        <h2>
+          <a href='/blog/2011/11/why_a_webby_blog.html'>Hacking The blog</a>
+        </h2>
+      </header>
+      <p>How to get a hacker to blog&#8230;<br />
+        I enjoy hacking, not blogging. Over the years I have attempted to blog, each time losing interest in favour of some hacking. But times are a changing, and what better way for a hacker to blog, but to blog about his blog related hacking.</p>
+        <h4>Lets begin &#8211; Hacking the Blog</h4>
+        <h4>The Goal</h4>
+        <p>fun simple blogging<br />
+        something somewhat homebrew.</p>
+        <h4>The Tech</h4>
+        <h4>the style</h4>
+        <p>After using <a href="http://webby.rubyforge.org" title="webby.rubyforge.org">Webby</a> for various projects I decided that it was about time to use it for myself. I also did not have a blog so I decided to combine them and now I have a Webby power blog. If your wondering how this is was done feel free to view, modify or play with the source of this webb  blog over at <a href="http://github.com/stefanpenner/iamstef.net">Github</a>.</p>
+        <p>Webby is a tiny static file based website management system written in ruby.</p>
+        <h4>Why Wbby?</h4>
+        <ol>
+        	<li><b>No Magic</b> &#8212; No magic, if something goes wrong or if you want to change something no complicated code base sits in your way.</li>
+        	<li><b>Static</b> &#8212; Any webhost will do, no scripting languages or databases are required for the host. Why waste valuable resources on a site that will remain static 99% of the time?</li>
+        	<li><b>Templates</b> &#8212; Using <a href="http://haml.hamptoncatlin.com/">Haml</a> , <a href="http://textism.com/tools/textile/">Textile</a> , and <a href="http://daringfireball.net/projects/markdown/">Markdown</a> , or other templating languages instead of pure html is pure awesome sauce. Unfortunately browsers still like there html and cannot interpret these templating languages directly. This is not a problem for larger web application frameworks such as <a href="http://www.merbivore.com/">Merb</a> or <a href="http://rubyonrails.org/">Ruby on Rails</a>. since they already take advantage of various templating and markup languages. But for simple sites the overhead of a full application stack is pointless. Luckily Webby comes to the rescue and allows us to use these templating languages on static sites.</li>
+        </ol>
+        <h4>Templating</h4>
+        <p>Code duplication sucks, and again this is something larger frameworks help prevent with various templating tricks. Webby brings many of these tricks back to static websites. Here are two core features of the blog gistified:</p>
+        <pre class='sh_ruby'>
+        # Webby provides us with the @pages instance variable,
+        # which is a ruby enumerable of all the pages webby indexes.
+        # The snippet below gives me access to all my blog posts.
+        
+        posts = @pages.find(:all,
+                            in_directory: 'blog',
+                            recursive:    true,
+                            sort_by:      'created_at',
+                            reverse:      true)
+        </pre>
+        <pre class='sh_ruby'>
+        # Now we can easily perform some ruby magic to group the 
+        # posts by months.
+        
+        posts.group_by do |post|
+          post.created_at.strftime('%B %Y')
+        end.each do |group,posts|
+          # ...
+        end
+        </pre>
+        <h4>Mobile</h4>
+        <h4>Conclusion</h4>
+        <p>No regrets using webby to hack together this little blog, but I would like to point out that such a blog is not for everyone. If you are more confortable with a wysiwyg style editor this is probabily not your cup of tea and I would suggest you look into something like <a href="http://wordpress.com">Wordpress</a> .</p>
+      <script> var idcomments_acct = '3c052641aefb55cae387a0e63b9a32c2', idcomments_post_id, idcomments_post_url; </script>
+      <span id="IDCommentsPostTitle" style="display:none"></span>
+      <script type='text/javascript' src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+      <script type='text/javascript' src='http://google-analytics.com/ga.js'></script>
+      <script type='text/javascript'> try { var pageTracker = _gat._getTracker("UA-4246413-2"); pageTracker._trackPageview();} catch(err) {}</script>
+    </article>
+  </body>
+</html>

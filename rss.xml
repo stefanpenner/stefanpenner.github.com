@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<rss version='2.0'>
+  <channel>
+    <title>Iamstef.net - Blog</title>
+    <link>http://iamstef.net/</link>
+    <description>g</description>
+    <language>en-us</language>
+    <pubDate>Tue, 10 Jun 2003 04:00:00 GMT</pubDate>
+    <lastBuildDate>Tue, 10 Jun 2003 09:41:01 GMT</lastBuildDate>
+    <item>
+      <title>Hacking The blog</title>
+      <link>http://iamstef.net/blog/2011/11/why_a_webby_blog.html</link>
+      <description>Why I choose to build a webby blog</description>
+      <pubDate>2011-11-27 15:12:34 -0500</pubDate>
+      <guid>http://iamstef.net/blog/2011/11/why_a_webby_blog.html?1344816095</guid>
+    </item>
+  </channel>
+</rss>

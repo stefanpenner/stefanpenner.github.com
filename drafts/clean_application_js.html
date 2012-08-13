@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='chrome=1' http-equiv='X-UA-Compatible' />
+    <meta content='text/html;charset=utf-8' http-equiv='Content-Type' />
+    <meta content='4MWsSoj8XgeWCUPYXp2VwjFloSmkbO7wqfu9woyD++E=' name='verify-v1' />
+    <meta content='The great application.js cleansing' name='description' />
+    <title>iamstef: The great application.js cleansing</title>
+    <script type='text/javascript'>
+      //<![CDATA[
+        (function(){
+          var e = [ 'header','footer','nav','article','section','aside'];
+          for(var i = 0; i < e.length; i++){ document.createElement(e[i]); }
+        })();
+      //]]>
+    </script>
+    <link href='/rss.xml' rel='alternate' title='iamSTEF.net RSS Feed' type='application/rss+xml' />
+    <link href='/css/site.css' media='screen' rel='stylesheet' title='no title' type='text/css' />
+    <link rel="stylesheet" type="text/css" href="/css/sh_nedit.min.css">
+    <script type="text/javascript" src="/js/sh_main.min.js"></script>
+  </head>
+  <body onload='sh_highlightDocument("/lang/",".min.js")'>
+    <header id='main'>
+      <h1 id='logo'>
+        <a href='/'>Stefan Penner</a>
+      </h1>
+    </header>
+    <article>
+      <header>
+        <time datetime='2009-03-12T15:12:34'>March 12, 2009</time>
+        <h2>
+          <a href='/drafts/clean_application_js.html'>The great application.js cleansing</a>
+        </h2>
+      </header>
+      <p>The un-obtrusive JavaScript movement, has cleansed our views. No more are they a bazaar of disjoint in-lined JavaScript, but now our JavaScript resides in its appropriate library file(s). Optimized for maximum reuse and minimal duplication.</p>
+        <p>But it seems this goal of a single global JavaScript file has some down sides. Often we trigger JavaScript based on which elements are on the given page. Discovering which elements are present, and which aren&#8217;t requires at least 1 DOM query. On smaller sites, where we poll for 2 or 3 things, this isn&#8217;t a bad thing. The issue arises when many such element lookups are needlessly performed per page.</p>
+        <div style="display:block;margin:0 auto;width:270px;height:400px;background:url(/images/verbal-abuse.gif);"></div>
+        <p>Not only does this needlessly abuse the DOM, but also tends to prevent structured code. It seems many other have come to this conclusion (<a href="http://static.jquery.com/files/rocker/scripts/custom.js">jQuery</a>). Now their ideas work well in preventing DOM abuse, but I feel may fall short when it comes to code organization.</p>
+        <pre class='sh_javascript'>
+        // JS file with url based conditional code execution 
+        // (jquery.com)
+        
+        var loc = window.location.href;
+        
+        //Download
+        if(loc.indexOf('http://jquery.com/Download') &gt; -1){
+          $('#jq-nav .jq-download').addClass('jq-current');
+        }
+        //Tutorials
+        else if(loc.indexOf('http://jquery.com/Tutorials') &gt; -1){
+          $('#jq-nav .jq-tutorials').addClass('jq-current');
+        }
+        //UI within docs
+        else if(loc.indexOf('http://jquery.com/UI') &gt; -1){
+          $('#jq-nav .jq-current').removeClass('jq-current');
+          $('#jq-nav .jq-ui').addClass('jq-current');
+        }
+        
+        ...// lots more
+        
+        //plugins lates
+        else if(loc.indexOf('http://jquery.com/project') &gt; -1){
+          $('#jq-nav .jq-allPlugins').addClass('jq-current');
+        }
+        </pre>
+        <p>Let me suggest an experimental alternative, <a href="http://github.com/stefanpenner/router.js">router.js</a>.</p>
+        <pre class='sh_javascript'>
+        Iamstef.router(function(map){
+        
+          map.path(/(Download|Tutorials)/i, function(map,result){
+            $('#jq-nav .jq-'+result[1]).addClass('jq-current');
+          });;
+        
+          map.path(/UI/i, function(){
+            $('#jq-nav .jq-current').removeClass('jq-current');
+            $('#jq-nav .jq-ui').addClass('jq-current');
+          });
+        
+          map.path(/project/i,function(){
+            $('#jq-nav .jq-allPlugins').addClass('jq-current');
+          });
+        });
+        </pre>
+        <p>This simple library, provides a concise domain specific language to conditional execute based on location.</p>
+        <pre class='sh_javascript'>
+        Iamstef.router(function(map){
+          map.hostname(/orange/,function(map){
+        
+            // nested routing:
+            //   this only executes if the outer condition has 
+            //   been met.
+            //
+            map.hash(/apple/,function(map){
+        
+              // If the hostname matches orange, and the hash apple, 
+              // then in this example the gallery also executes
+              //
+              gallery();
+            });
+          });
+        
+          // route and capture with the regex on the locations 
+          // pathname:
+          //   map: inner layer api call
+          //   loc: the local location var, and in this cause
+          //        its pathname attribute contains the matches 
+          //        results of the regex.
+          //
+          map.pathname(/search=([^&amp;]+)/,function(map,loc){
+        
+            // log the pathname resulting matches array, 
+            // (if the match passes)
+            //
+            console.log(loc.pathname);
+          });
+        
+          // route on the href
+          //
+          map.href(/google/,function(){
+        
+            // if the href matches google, execute the googlemap 
+            //
+            googlemap();
+          });
+        
+          // route and match based on any of the location
+          //  attributes
+          //
+          map.matches({ hostname : /google.com/,
+                        href : /https?/},function(map){
+        
+            // mix and match
+            //
+            map.pathname(/1/,function(){});
+          });
+        });
+        </pre>
+      <script> var idcomments_acct = '3c052641aefb55cae387a0e63b9a32c2', idcomments_post_id, idcomments_post_url; </script>
+      <span id="IDCommentsPostTitle" style="display:none"></span>
+      <script type='text/javascript' src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+      <script type='text/javascript' src='http://google-analytics.com/ga.js'></script>
+      <script type='text/javascript'> try { var pageTracker = _gat._getTracker("UA-4246413-2"); pageTracker._trackPageview();} catch(err) {}</script>
+    </article>
+  </body>
+</html>
