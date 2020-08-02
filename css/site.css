@@ -140,7 +140,7 @@ body {
 
 @media only screen and (min-width: 768px) {
   #about-me aside {
-    width: 10em;
+    width: 12em;
     margin-right: 2em; } }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   body {
