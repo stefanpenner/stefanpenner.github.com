@@ -1,49 +1,30 @@
 body, div,
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend, th, td,
-article, aside, figure, footer, header, hgroup, menu, nav, section {
+article, aside, figure, footer, header, nav, section {
   margin: 0;
   padding: 0;
   border: 0; }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, nav, section, audio, canvas, video {
+article, aside, figure, footer, header, nav, section {
   display: block; }
 
 html {
   height: 100%;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%; }
+  -webkit-text-size-adjust: 100%; }
 
 body {
   min-height: 100%;
-  font-size: 100%; }
-
-.hidden {
-  display: none; }
-
-pre {
-  white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: break-word; }
+  max-width: 40em;
+  margin: 0 auto;
+  padding: 3em 2em;
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: corbel, "avenir next", "lucida grande", -apple-system, system-ui, helvetica, sans-serif;
+  color: #1a1a1a; }
 
 b, strong {
   font-weight: bold; }
-
-abbr[title] {
-  border-bottom: 1px dotted; }
-
-body {
-  -webkit-tap-highlight-color: rgba(255, 0, 0, 0.62); }
-
-body {
-  font-size: 16px;
-  line-height: 26px;
-  font-family: corbel, "lucida grande", helvetica, sans-serif;
-  hyphenate: auto;
-  hyphenate-lines: 3;
-  justify; }
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
@@ -52,46 +33,28 @@ h1, h2, h3, h4, h5, h6 {
   font-family: georgia, "bitstream vera sans serif", "lucida grande", helvetica, verdana, sans-serif;
   font-variant: small-caps; }
 
-code, kbd, samp, pre, tt, var {
-  font-family: mono-space, monospace; }
+p {
+  margin-bottom: 1em; }
 
 a {
   font-variant: small-caps;
   border-bottom: 1px solid #dadada;
   text-decoration: none; }
 
-a:focus {
-  outline: 0; }
-
 a, a:visited {
   color: black; }
 
 a:hover {
-  border-bottom: none; }
+  border-bottom-color: #1a1a1a; }
 
-blockquote {
-  width: 80%;
-  margin: 0 auto;
-  font-style: italic;
-  display: block;
-  color: #666666;
-  border-left: 3px solid #eeeeee;
-  padding: 0 0 0 1em;
-  margin: 2em 0 2em 2.5em; }
-
-hr {
-  background: #dadada;
-  height: 1px;
-  border: none;
-  margin: 2em 0; }
+header {
+  text-align: center; }
 
 header#main {
   margin-bottom: 3em; }
   header#main h1#logo {
     font-size: 40px;
-    color: black;
-    text-decoration: none;
-    font-family: georgia, "bitstream vera sans serif", "lucida grande", helvetica, verdana, sans-serif;
+    font-weight: normal;
     margin: 0; }
   header#main h4 {
     font-weight: normal;
@@ -100,70 +63,46 @@ header#main {
 ul.content-list {
   list-style: none; }
 
-header h1 {
-  text-align: center;
-  font-family: georgia, "bitstream vera sans serif", "lucida grande", helvetica, verdana, sans-serif;
-  font-weight: normal; }
-
-time {
-  font-family: HelveticaNeue-Light, Helvetica, Arial;
-  line-height: 26px;
-  font-variant: small-caps; }
-
-header {
-  text-align: center; }
-
-.clear {
-  clear: both; }
-
-body {
-  margin: 0 auto;
-  padding: 3em 2em;
-  -webkit-text-size-adjust: 100%; }
+section {
+  margin-bottom: 1em; }
 
 #about-me aside {
   margin-bottom: 1em;
   text-align: right;
   float: left; }
 
-section {
-  margin-bottom: 1em; }
+.clear {
+  clear: both; }
 
-section#stuff-todo article {
-  width: 200px;
-  float: left;
-  height: 200px; }
-
-body {
-  width: 40em; }
+footer#colophon {
+  margin-top: 4em;
+  text-align: center;
+  font-size: 0.85em;
+  color: #767676; }
+  footer#colophon a, footer#colophon a:visited {
+    color: #767676; }
 
 @media only screen and (min-width: 768px) {
   #about-me aside {
     width: 12em;
     margin-right: 2em; } }
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-  body {
-    width: 25em; }
 
+@media only screen and (min-width: 480px) and (max-width: 767px) {
   #about-me aside {
     margin-right: 2em; } }
+
 @media only screen and (max-width: 479px) {
   body {
-    padding: 2em 3em;
-    width: 18em; }
+    padding: 2em 1.5em; }
 
   #about-me aside {
     float: none;
     text-align: center;
-    margin: none; }
+    margin: 0; }
 
   header#main {
     margin-bottom: 1em; }
     header#main h1#logo {
       font-size: 2em; }
     header#main h4 {
-      font-size: 1em; }
-
-  section#stuff-todo article {
-    width: 20em;
-    float: left; } }
+      font-size: 1em; } }

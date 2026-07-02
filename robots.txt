@@ -1,4 +1,4 @@
 User-Agent: *
-Disallow: /js/
-Disallow: /images/
 Disallow: /css/
+
+Sitemap: https://iamstef.net/sitemap.xml
