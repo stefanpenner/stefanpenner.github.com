@@ -21,6 +21,44 @@
   }
 }
 
+/* registered so the browser can interpolate it as a color */
+@property --accent {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #b45309;
+}
+
+/* hue-ordered: alpenglow → pine → lake → bluebird → wildflower → red rock */
+@keyframes accent-cycle-light {
+  0%   { --accent: #b45309; }
+  16%  { --accent: #4d7c0f; }
+  33%  { --accent: #0f766e; }
+  50%  { --accent: #0e6ba8; }
+  66%  { --accent: #6b4fa0; }
+  83%  { --accent: #9c3d1e; }
+  100% { --accent: #b45309; }
+}
+
+@keyframes accent-cycle-dark {
+  0%   { --accent: #e0913f; }
+  16%  { --accent: #a3c162; }
+  33%  { --accent: #4fb8ab; }
+  50%  { --accent: #6fb7e0; }
+  66%  { --accent: #b39ddb; }
+  83%  { --accent: #e0784f; }
+  100% { --accent: #e0913f; }
+}
+
+:root {
+  animation: accent-cycle-light 25s linear infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    animation-name: accent-cycle-dark;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -62,7 +100,7 @@ body::after {
   inset: 0;
   z-index: -2;
   pointer-events: none;
-  background: radial-gradient(ellipse 80% 50% at 50% 75%,
+  background: radial-gradient(ellipse 80% 50% at 50% 95%,
     var(--glow), transparent 75%);
 }
 
@@ -126,6 +164,10 @@ footer a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  :root {
+    animation: none;
+  }
+
   a {
     transition: none;
   }
