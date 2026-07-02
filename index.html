@@ -50,5 +50,12 @@
         <a href='https://github.com/stefanpenner/stefanpenner.github.com'>source</a>
       </footer>
     </main>
+    <script>
+      addEventListener('mousemove', e => {
+        const s = document.documentElement.style;
+        s.setProperty('--mx', e.clientX + 'px');
+        s.setProperty('--my', e.clientY + 'px');
+      });
+    </script>
   </body>
 </html>

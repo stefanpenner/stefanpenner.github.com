@@ -6,7 +6,7 @@
   --rule: #dadada;
   --accent: #b45309; /* alpenglow */
   --grid: rgba(26, 26, 26, 0.055);
-  --glow: color-mix(in srgb, var(--accent) 4%, transparent);
+  --grid-bright: color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,7 +17,7 @@
     --rule: #3a382f;
     --accent: #e0913f;
     --grid: rgba(232, 230, 223, 0.05);
-    --glow: color-mix(in srgb, var(--accent) 8%, transparent);
+    --grid-bright: color-mix(in srgb, var(--accent) 16%, transparent);
   }
 }
 
@@ -90,18 +90,23 @@ body::before {
     linear-gradient(var(--grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid) 1px, transparent 1px);
   background-size: 3em 3em;
-  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 45%, transparent 25%, black 90%);
-  mask-image: radial-gradient(ellipse 90% 80% at 50% 45%, transparent 25%, black 90%);
+  -webkit-mask-image: linear-gradient(135deg, transparent 12%, rgb(0 0 0 / 0.75) 50%, transparent 88%);
+  mask-image: linear-gradient(135deg, transparent 12%, rgb(0 0 0 / 0.75) 50%, transparent 88%);
 }
 
+/* grid wakes up near the cursor; parked off-screen until the mouse moves */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -2;
+  z-index: -1;
   pointer-events: none;
-  background: radial-gradient(ellipse 80% 50% at 50% 95%,
-    var(--glow), transparent 75%);
+  background:
+    linear-gradient(var(--grid-bright) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-bright) 1px, transparent 1px);
+  background-size: 3em 3em;
+  -webkit-mask-image: radial-gradient(circle 9em at var(--mx, -100em) var(--my, -100em), black, transparent 85%);
+  mask-image: radial-gradient(circle 9em at var(--mx, -100em) var(--my, -100em), black, transparent 85%);
 }
 
 main {
@@ -166,6 +171,10 @@ footer a {
 @media (prefers-reduced-motion: reduce) {
   :root {
     animation: none;
+  }
+
+  body::after {
+    display: none;
   }
 
   a {
