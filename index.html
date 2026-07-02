@@ -51,6 +51,8 @@
       </footer>
     </main>
     <script>
+      // start the accent cycle somewhere random
+      document.documentElement.style.animationDelay = -(Math.random() * 25).toFixed(2) + 's';
       addEventListener('mousemove', e => {
         const s = document.documentElement.style;
         s.setProperty('--mx', e.clientX + 'px');
