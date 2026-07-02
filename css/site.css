@@ -6,6 +6,7 @@
   --rule: #dadada;
   --accent: #b45309; /* alpenglow */
   --grid: rgba(26, 26, 26, 0.055);
+  --glow: color-mix(in srgb, var(--accent) 4%, transparent);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,6 +17,7 @@
     --rule: #3a382f;
     --accent: #e0913f;
     --grid: rgba(232, 230, 223, 0.05);
+    --glow: color-mix(in srgb, var(--accent) 8%, transparent);
   }
 }
 
@@ -52,6 +54,16 @@ body::before {
   background-size: 3em 3em;
   -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 45%, transparent 25%, black 90%);
   mask-image: radial-gradient(ellipse 90% 80% at 50% 45%, transparent 25%, black 90%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: radial-gradient(ellipse 80% 50% at 50% 75%,
+    var(--glow), transparent 75%);
 }
 
 main {
