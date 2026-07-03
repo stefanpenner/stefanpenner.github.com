@@ -1,0 +1,73 @@
+https://keybase.io/stefanpenner
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://iamstef.net
+  * I am stefanpenner (https://keybase.io/stefanpenner) on keybase.
+  * I have a public key with fingerprint EC5C D237 8064 3984 BFF9  C0FF 0839 E05D 8DEA 0857
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "client": {
+            "name": "keybase.io node.js client",
+            "version": "0.4.0"
+        },
+        "key": {
+            "fingerprint": "ec5cd23780643984bff9c0ff0839e05d8dea0857",
+            "host": "keybase.io",
+            "key_id": "0839E05D8DEA0857",
+            "uid": "e89d1a948bd05eeed8db86baf22b2800",
+            "username": "stefanpenner"
+        },
+        "merkle_root": {
+            "ctime": 1401639622,
+            "hash": "8bdaa4246885adc5632d17a93c376f779a7692842f4ae3ed44995cf2cb172389e51edce67d35eda73cfe6796ab02559bb7ae4458bf700567db85c16bf8534797",
+            "seqno": 13746
+        },
+        "service": {
+            "hostname": "iamstef.net",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1401639638,
+    "expire_in": 157680000,
+    "prev": "bdbe324bf887fa9f93b12c1b56d4a88b344d9bec4e62611f885533446685643e",
+    "seqno": 5,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1.4
+
+owFdkn1oHEUYxi8fracgVamxotWw1mr1OHZ3PnbmBEFo08pJhUioiHrM7LybbHK3
+e93dnoYapFiRViK11aSCIJH+kSBSSqBtCiq01fRDBRWTKFSrKGIq0mrwm+hMOPHj
+v52d3zzv+7zPu+fKtlxrS56ff2R4Pr+l5ey3MvfAs90z2y0Zq0GrtN3yqyFEmfmK
+RA2skjUAg1KkUAzjzihWUOxPO5tMwWpAkoZxpCm7iIu2NVQwuHkchFEvJPUkNFoW
++MRXLvKYTTHiDMsg4L4dBDZDHGyimAJhM+Jpyb44zf5T1VrSrITKVNH8BpusZ+s3
+3NPkty1dAOPKERwzqWwCAFpRMipF4LrSZbZtwBSSpqU0g0BEdYgiSEzPNUgGqlBJ
+4njJuJ+FBnOw7VDEqevqrkTapx9qeSGwiyljRCifUOQqxxMc+cijgedx4VHuMuwG
+WAAChTHnxA9cXzqeixgH4oDygXoKEVDCQ36gD5wKabuEcCk9ARgTJgPPtonGJCO+
+Q2XACMIeN35T2BrFujnkYTpkjkkj9MG0bSbXNBiKmvFYjMCkVE/iLPbjqr7oy7J6
+yVjOBusGfAwOykpToyLDSOnY/p2ro9H/jQOxggWP18MEKqEhiEf1gG3b1IGG1pRK
+AnJ1xox5geABR9JxfUcSqrBgTCKMFZfgY6AudRyNEYL0T0oZ0esB/5gkuk/RawIL
+eyORbUvAGtrVcmN7rqU1t3xZq1nc3BWXX/X3Nm9Ze9liaUX3u3j+54unooWdh/1d
+g9MbZ899cqx87+9n7iq7K7+56YOO8eULc3Dbnz8Nreo5u/alNZtfPdjdvvjizudn
+F8aPv33n3Gih9P3hCyMXrsNt2R/1S9XZV2j21vCBzSM/9MwcXzFx6GR71/2ffbi/
+fnLvpviN8msfjfb3xdG51fnohSOrdvRPT+Zzu1+vNlJrz5rbN5Xv7jhxLbz/VOnW
+j088M/nevq+iHydnV2dd1ptjp7zwaFbY+tCntekHJ3asG7vl5e/uW1lZ1jk1M/E5
+Hx9+8tHxgV876dzGrv039/yye+/Upau/HHtu8etD58tf/PbO6amu+YV119zxdKPt
+WMcNp6/fl3/4iYvRSG30jP0X
+=GKsV
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/stefanpenner
